@@ -25,21 +25,22 @@ Some points I noticed.
     - Whereas traditional machine learning focused on hand-curating
     features, *LLMs work best when we dump all our text data*, into the model and let the layers sort it out.
 
-        ![The paradigm shift](../images/dl-with-pytorch.png)
-
-    - LLMs are extremely compute-intensive to train (or pre-train), and fairly easy to fine-tune
-    - Metrics and evaluation
-        - Traditional models
-            - offline : precision, recall, f1, ROC/AUC
-            - online : clickthrough rate
-            - operational : i/o, model response time, service uptime
-        - Because we are now mostly compressing text rather than numerical or heterogeneous features, we suddenly care about also the things above but some others specific to models whose goal is to complete strings of text
-            - [Number every LLM dev should know](https://github.com/ray-project/llm-numbers)
-            - time to first token
-            - tokens per second
-    - GPU architectures
-        - In tradictional ML, we are used to some tools to handle complex data flow such as apache spark, apache airflow and apache lucene
-        - many of these tools were built under the assumptions : we need to coordinate [lots of small pieces of log data](https://newsletter.vickiboykis.com/archive/logs-were-our-lifeblood-now-theyre-our-liability/)
-         flowing from our app’s usage servers into a place where it can be aggregated for modeling, so we care about coordination of distributed systems
-        - In the world of GPU training and serving, we now have a different problem.
-        We need to get everything onto the GPU as fast as possible, so we can process it, because [it’s inefficient to have the GPU idling](https://horace.io/brrr_intro.html), waiting for more data operations.
+  ![The paradigm shift](../images/dl-with-pytorch.png)
+						[From Deep Learning with PyTorch](https://www.manning.com/books/deep-learning-with-pytorch)
+	
+- LLMs are extremely compute-intensive to train (or pre-train), and fairly easy to fine-tune that is why [[rag]] architecture is gaining in popularity. 
+- Metrics and evaluation
+    - Traditional models
+        - offline : precision, recall, f1, ROC/AUC
+        - online : clickthrough rate
+        - operational : i/o, model response time, service uptime
+    - Because we are now mostly compressing text rather than numerical or heterogeneous features, we suddenly care about also the things above but some others specific to models whose goal is to complete strings of text
+        - [Number every LLM dev should know](https://github.com/ray-project/llm-numbers)
+        - time to first token
+        - tokens per second
+- GPU architectures
+    - In tradictional ML, we are used to some tools to handle complex data flow such as apache spark, apache airflow and apache lucene
+    - many of these tools were built under the assumptions : we need to coordinate [lots of small pieces of log data](https://newsletter.vickiboykis.com/archive/logs-were-our-lifeblood-now-theyre-our-liability/)
+     flowing from our app’s usage servers into a place where it can be aggregated for modeling, so we care about coordination of distributed systems
+    - In the world of GPU training and serving, we now have a different problem.
+    We need to get everything onto the GPU as fast as possible, so we can process it, because [it’s inefficient to have the GPU idling](https://horace.io/brrr_intro.html), waiting for more data operations.
