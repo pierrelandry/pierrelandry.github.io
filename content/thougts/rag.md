@@ -3,6 +3,7 @@ title: Retrieval Augmented Generation
 draft: false
 tags:
   - sapling
+  - llm
   - rag
 ---
 

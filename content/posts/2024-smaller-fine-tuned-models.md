@@ -10,8 +10,7 @@ tags:
 
 In late 2022, OpenAI started the LLM revolution by releasing its own model, ChatGPT, open to all.. When it was released, it outperformed the best open-source model, BLOOM, by 90% on the [MMLU test](https://arxiv.org/abs/2009.03300). Today, just over a year later, the delta between the best open-source model (Mixtral-8x7b) and the best closed source model (GPT-4) [is around 15%](https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard) on the MMLU test. 
 2023 was the year of the explosion of open-source models, led by the [LLaMA](https://ai.meta.com/blog/large-language-model-llama-meta-ai/) model used by Meta. This movement has led the open-source community to work massively on deploying these models, giving rise to projects such as [llama.cpp](https://github.com/ggerganov/llama.cpp), whose main aim of which is to deploy the LLaMA model on MacBooks.
-However, deploying a model comes with its own set of challenges.
-
+However, deploying a model comes with its own set of challenges. Here are just a few of them. 
 ##The challenge of open-source models
 
 - The cost of deployment
